@@ -25,16 +25,30 @@ const NumberCard = ({ finalNumber, isSpinning, delay = 0 }: NumberCardProps) => 
     if (!hasStarted) return;
 
     if (isSpinning) {
+      let currentDelay = 50;
+      const maxDelay = 300;
+      const delayMultiplier = 1.15;
+      let timeoutId: NodeJS.Timeout;
 
-      const interval = setInterval(() => {
+      const spinNumber = () => {
         setDisplayNumber(Math.floor(Math.random() * 10));
-      }, 100);
 
-      return () => clearInterval(interval);
+        currentDelay = Math.min(currentDelay * delayMultiplier, maxDelay);
+
+        timeoutId = setTimeout(spinNumber, currentDelay);
+      };
+
+      spinNumber();
+
+      return () => clearTimeout(timeoutId);
     } else {
+      
+      const finalTimeout = setTimeout(() => {
+        setDisplayNumber(finalNumber);
+        setHasStarted(false);
+      }, 200);
 
-      setDisplayNumber(finalNumber);
-      setHasStarted(false);
+      return () => clearTimeout(finalTimeout);
     }
   }, [isSpinning, finalNumber, hasStarted]);
 
