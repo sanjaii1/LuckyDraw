@@ -12,7 +12,7 @@ const NumberCard = ({ finalNumber, isSpinning, delay = 0 }: NumberCardProps) => 
 
   useEffect(() => {
     if (isSpinning && !hasStarted) {
-      
+
       const startTimeout = setTimeout(() => {
         setHasStarted(true);
       }, delay);
@@ -25,14 +25,14 @@ const NumberCard = ({ finalNumber, isSpinning, delay = 0 }: NumberCardProps) => 
     if (!hasStarted) return;
 
     if (isSpinning) {
-       
+
       const interval = setInterval(() => {
         setDisplayNumber(Math.floor(Math.random() * 10));
       }, 100);
 
       return () => clearInterval(interval);
     } else {
-      
+
       setDisplayNumber(finalNumber);
       setHasStarted(false);
     }
@@ -43,7 +43,7 @@ const NumberCard = ({ finalNumber, isSpinning, delay = 0 }: NumberCardProps) => 
       <div className="relative 
                     w-12 h-20 
                     xs:w-16 xs:h-24 
-                    sm:w-22 sm:h-32 
+                    sm:w-20 sm:h-32 
                     md:w-24 md:h-36 
                     lg:w-28 lg:h-40 
                     xl:w-32 xl:h-48 
@@ -85,7 +85,7 @@ const NumberCard = ({ finalNumber, isSpinning, delay = 0 }: NumberCardProps) => 
                     left-1/2 -translate-x-1/2 
                     w-16 h-4 
                     xs:w-20 xs:h-5 
-                    sm:w-26 sm:h-7 
+                    sm:w-24 sm:h-7 
                     md:w-28 md:h-8 
                     lg:w-32 lg:h-9 
                     xl:w-36 xl:h-10">

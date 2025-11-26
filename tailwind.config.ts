@@ -3,6 +3,22 @@ import type { Config } from "tailwindcss";
 export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  safelist: [
+    'glass-panel',
+    'tech-grid',
+    'neon-button',
+    'congrats-text',
+    'prize-text',
+    'circuit-line',
+    'circuit-dot',
+    'podium-base',
+    {
+      pattern: /text-(xs|sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|8xl)/,
+    },
+    {
+      pattern: /(w|h)-(12|16|20|24|28|32|36|40|48)/,
+    },
+  ],
   prefix: "",
   theme: {
     container: {
