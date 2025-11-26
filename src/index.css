@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 265 70% 8%;
+    --foreground: 180 100% 90%;
+
+    --card: 265 50% 12%;
+    --card-foreground: 180 100% 90%;
+
+    --popover: 265 50% 12%;
+    --popover-foreground: 180 100% 90%;
+
+    --primary: 270 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 265 70% 8%;
+
+    --muted: 265 40% 20%;
+    --muted-foreground: 180 50% 70%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 265 70% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 50% 30%;
+    --input: 265 40% 20%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Neon colors */
+    --neon-purple: 270 80% 60%;
+    --neon-cyan: 180 100% 50%;
+    --neon-blue: 220 100% 60%;
+
+    /* Glows */
+    --glow-purple: 0 0 20px hsl(270 80% 60% / 0.5), 0 0 40px hsl(270 80% 60% / 0.3);
+    --glow-cyan: 0 0 20px hsl(180 100% 50% / 0.5), 0 0 40px hsl(180 100% 50% / 0.3);
+    --glow-strong: 0 0 30px hsl(180 100% 50% / 0.8), 0 0 60px hsl(270 80% 60% / 0.6);
+  }
+
+  .dark {
+    --background: 265 70% 8%;
+    --foreground: 180 100% 90%;
+    --card: 265 50% 12%;
+    --card-foreground: 180 100% 90%;
+    --popover: 265 50% 12%;
+    --popover-foreground: 180 100% 90%;
+    --primary: 270 80% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 265 70% 8%;
+    --muted: 265 40% 20%;
+    --muted-foreground: 180 50% 70%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 265 70% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 50% 30%;
+    --input: 265 40% 20%;
+    --ring: 180 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-color: #0a0514;
+    font-family: 'Orbitron', sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .congrats-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #020617;
+    -webkit-text-stroke: 3px #00f0ff;
+    text-shadow:
+      0 0 15px rgba(49, 162, 185, 0.322),
+      0 0 30px rgba(0, 240, 255, 0.4);
+    position: relative;
+    letter-spacing: 0.05em;
+    z-index: 10;
+  }
+
+  /* Glossy reflection overlay */
+  .congrats-text::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-text-stroke: 0;
+    color: transparent;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 45%, rgba(0, 240, 255, 0.3) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    pointer-events: none;
+    z-index: 11;
+  }
+
+  .circuit-line {
+    position: absolute;
+    background: #00f0ff;
+    box-shadow: 0 0 5px #00f0ff;
+    opacity: 0.8;
+  }
+
+  .circuit-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #00f0ff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #00f0ff;
+  }
+
+  .glass-panel {
+    background: rgba(20, 10, 40, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(180, 100, 255, 0.3);
+    box-shadow:
+      0 0 20px rgba(138, 43, 226, 0.2),
+      inset 0 0 20px rgba(138, 43, 226, 0.1);
+  }
+
+  .tech-grid {
+    background-image:
+      linear-gradient(rgba(138, 43, 226, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(138, 43, 226, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  }
+
+  .podium-base {
+    background: radial-gradient(ellipse at center, rgba(138, 43, 226, 0.4) 0%, rgba(10, 5, 20, 0) 70%);
+    transform: perspective(1000px) rotateX(60deg);
+  }
+
+  .neon-button {
+    background: linear-gradient(180deg, #6a0dad, #4b0082);
+    box-shadow:
+      0 0 10px #6a0dad,
+      0 5px 0 #2e004f,
+      0 10px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s;
+  }
+
+  .neon-button:active {
+    transform: translateY(5px);
+    box-shadow:
+      0 0 5px #6a0dad,
+      0 0 0 #2e004f,
+      0 5px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 10s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Prize text color animation */
+  .prize-text {
+    animation: prize-color-switch 2s ease-in-out infinite;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 0.15em;
+  }
+
+  @keyframes prize-color-switch {
+
+    0%,
+    100% {
+      color: #ffffff;
+    }
+
+    50% {
+      color: #ff0000;
+    }
+  }
+
+  /* Responsive adjustments for mobile */
+  @media (max-width: 475px) {
+    .congrats-text {
+      -webkit-text-stroke: 2px #00f0ff;
+      letter-spacing: 0.02em;
+    }
+
+    .tech-grid {
+      background-size: 30px 30px;
+    }
+  }
+
+  /* Responsive adjustments for tablets */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .tech-grid {
+      background-size: 35px 35px;
+    }
+  }
+}
