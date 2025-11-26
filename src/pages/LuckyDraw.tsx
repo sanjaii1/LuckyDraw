@@ -34,7 +34,7 @@ const LuckyDraw = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-neon-purple/20 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-neon-cyan/10 blur-[100px] rounded-full pointer-events-none" />
       <div className="relative z-10 w-full max-w-7xl mx-auto 
-                   space-y-6 xs:space-y-8 sm:space-y-10 md:space-y-12 
+                   space-y-4 xs:space-y-6 sm:space-y-8 md:space-y-10 
                    flex flex-col items-center">
         <div className="text-center space-y-6 relative">
           <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
@@ -49,12 +49,12 @@ const LuckyDraw = () => {
               <div className="circuit-dot bottom-2 right-0" />
             </div>
           </div>
-          <h1 className="text-3xl 
-                       xs:text-4xl 
-                       sm:text-5xl 
-                       md:text-6xl 
-                       lg:text-7xl 
-                       xl:text-8xl 
+          <h1 className="text-2xl 
+                       xs:text-3xl 
+                       sm:text-4xl 
+                       md:text-5xl 
+                       lg:text-6xl 
+                       xl:text-7xl 
                        congrats-text animate-fade-in-up"
             data-text="CONGRATULATION">
             CONGRATULATION
@@ -62,12 +62,12 @@ const LuckyDraw = () => {
           <div className="h-1 w-full max-w-md mx-auto bg-gradient-to-r from-transparent via-neon-cyan to-transparent opacity-50" />
         </div>
         {showCongrats && (
-          <h2 className="text-2xl 
-                       xs:text-3xl 
-                       sm:text-4xl 
-                       md:text-5xl 
-                       lg:text-6xl 
-                       xl:text-7xl 
+          <h2 className="text-xl 
+                       xs:text-2xl 
+                       sm:text-3xl 
+                       md:text-4xl 
+                       lg:text-5xl 
+                       xl:text-6xl 
                        prize-text animate-fade-in-up 
                        mt-2 xs:mt-3 sm:mt-4">
             1ST PRIZE
@@ -91,7 +91,7 @@ const LuckyDraw = () => {
           <div className="absolute 
                        bottom-[-10px] 
                        left-1/2 -translate-x-1/2 
-                       w-[140%] xs:w-[130%] sm:w-[130%] 
+                       w-[140%] xs:w-[130%] sm:w-[100%] 
                        h-16 xs:h-20 sm:h-20 
                        border border-neon-purple/30 rounded-[100%] 
                        bg-neon-purple/5 transform rotate-x-[90deg] pointer-events-none" />
@@ -116,16 +116,16 @@ const LuckyDraw = () => {
               onClick={handleSpin}
               disabled={isSpinning}
               className="neon-button relative 
-                       px-8 py-4 
-                       xs:px-10 xs:py-5 
-                       sm:px-12 sm:py-6 
-                       md:px-14 md:py-7 
-                       lg:px-16 lg:py-8 
-                       text-xl 
-                       xs:text-2xl 
-                       sm:text-3xl 
-                       md:text-3xl 
-                       lg:text-4xl 
+                       px-6 py-3 
+                       xs:px-8 xs:py-4 
+                       sm:px-10 sm:py-5 
+                       md:px-12 md:py-6 
+                       lg:px-14 lg:py-7 
+                       text-lg 
+                       xs:text-xl 
+                       sm:text-2xl 
+                       md:text-2xl 
+                       lg:text-3xl 
                        font-black text-white 
                        rounded-lg sm:rounded-xl 
                        border-none overflow-visible group 

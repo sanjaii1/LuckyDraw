@@ -41,12 +41,12 @@ const NumberCard = ({ finalNumber, isSpinning, delay = 0 }: NumberCardProps) => 
   return (
     <div className="relative group">
       <div className="relative 
-                    w-12 h-20 
-                    xs:w-16 xs:h-24 
-                    sm:w-20 sm:h-32 
-                    md:w-24 md:h-36 
-                    lg:w-28 lg:h-40 
-                    xl:w-32 xl:h-48 
+                    w-10 h-16 
+                    xs:w-12 xs:h-20 
+                    sm:w-16 sm:h-24 
+                    md:w-20 md:h-28 
+                    lg:w-24 lg:h-32 
+                    xl:w-28 xl:h-36 
                     glass-panel rounded-lg sm:rounded-xl
                     flex items-center justify-center
                     overflow-hidden
@@ -62,12 +62,12 @@ const NumberCard = ({ finalNumber, isSpinning, delay = 0 }: NumberCardProps) => 
           }} />
         <span className={`
           relative z-10 
-          text-3xl 
-          xs:text-4xl 
-          sm:text-6xl 
-          md:text-6xl 
-          lg:text-7xl 
-          xl:text-7xl 
+          text-2xl 
+          xs:text-3xl 
+          sm:text-4xl 
+          md:text-5xl 
+          lg:text-6xl 
+          xl:text-6xl 
           font-black
           bg-gradient-to-b from-[#00f0ff] to-[#0066ff] bg-clip-text text-transparent italic
           drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]
@@ -81,14 +81,14 @@ const NumberCard = ({ finalNumber, isSpinning, delay = 0 }: NumberCardProps) => 
         </span>
       </div>
       <div className="absolute 
-                    -bottom-4 xs:-bottom-5 sm:-bottom-7 md:-bottom-7 lg:-bottom-8 
+                    -bottom-3 xs:-bottom-4 sm:-bottom-5 md:-bottom-5 lg:-bottom-6 
                     left-1/2 -translate-x-1/2 
-                    w-16 h-4 
-                    xs:w-20 xs:h-5 
-                    sm:w-24 sm:h-7 
-                    md:w-28 md:h-8 
-                    lg:w-32 lg:h-9 
-                    xl:w-36 xl:h-10">
+                    w-12 h-3 
+                    xs:w-16 xs:h-4 
+                    sm:w-20 sm:h-5 
+                    md:w-24 md:h-6 
+                    lg:w-28 lg:h-7 
+                    xl:w-32 xl:h-8">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-4 rounded-[100%] 
                       bg-gradient-to-b from-[#1a0033] to-[#0a001a] 
                       border-2 border-purple-500/30
@@ -114,15 +114,15 @@ const NumberCard = ({ finalNumber, isSpinning, delay = 0 }: NumberCardProps) => 
                       border border-purple-200/55
                       shadow-[0_0_8px_rgba(138,43,226,0.65)]" />
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 
-                      w-10 xs:w-12 sm:w-16 
-                      h-24 xs:h-28 sm:h-36 md:h-40 lg:h-44 xl:h-48
+                      w-8 xs:w-10 sm:w-12 
+                      h-20 xs:h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40
                       bg-gradient-to-t from-[#0066ff]/20 via-[#0066ff]/15 to-transparent
                       blur-lg pointer-events-none" />
       </div>
       <div className="absolute 
-                    -bottom-5 xs:-bottom-6 sm:-bottom-8 
+                    -bottom-4 xs:-bottom-5 sm:-bottom-6 
                     left-0 w-full 
-                    h-2 xs:h-3 sm:h-5 
+                    h-1.5 xs:h-2 sm:h-3 
                     bg-black/50 blur-md rounded-[100%] transform scale-x-100" />
     </div >
   );
